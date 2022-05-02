@@ -24,8 +24,30 @@ class Person:
     # salary = property(get_salary, set_salary)
 
 p = Person('Bob')
-# p.salary = 103.7750
-p.salary = -103.7750
+p.salary = 103.7750
+# p.salary = -103.7750
 print(p.salary)
 # p.set_salary(103)
 # print(p.set_salary)
+
+
+class Time:
+    def __init__(self, second):
+        self._second = second
+
+    @property
+    def second(self):
+        return self._second
+
+    @second.setter
+    def second(self, second):
+        if second < 0 or second > 60:
+            raise ValueError('Invalid!')
+        self._second = second
+
+t = Time(54)
+t.second= -58
+print(t.second)
+
+
+
